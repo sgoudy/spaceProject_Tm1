@@ -4,14 +4,10 @@ spaceships that players can command in the game.
 
 # PrettyTable example
 from prettytable import PrettyTable
+from homebase import bases
 
 shipNames = ("the Death Star", "Enterprise", "Eleanor", "Tardis", "Serenity")
 shipCodenames = ("the Death Star", "Top Gun", "Andromeda", "Tesla", "Firefly")
-shipLocationAndDistance = ("Planet Viltrum/0 light years", 
-                           "Planet Vulcan/ 1000000 light years", 
-                            "Planet Vega/ 2000000 light years", 
-                            "Moon Io/ 500000 light years", 
-                            "Moon Titan/ 800000 light years")
 shipDefenses = ("Shields", "Cloaking Device", "Energy Absorbers", "Deflector Shields", "Stealth Technology")
 shipWeapons = ("Photon Torpedoes", "Laser Cannons", "Plasma Guns", "Railguns", "Missiles")
 shipCrew = ("5", "1", "1", "1", "1")
@@ -28,10 +24,11 @@ class ship:
         crew (str): The crew of the spaceship.
         fuel (str): The fuel of the spaceship.
     """
-    def __init__(self, name, codename, distance, defenses, weapons, crew, fuel):    
+    def __init__(self, name, codename, location, distance, defenses, weapons, crew, fuel):    
         self.name = name
         self.codename = codename
-        self.distance = distance
+        self.baseLocation = location
+        self.baseDistance = distance
         self.defenses = defenses
         self.weapons = weapons
         self.crew = crew
@@ -44,8 +41,7 @@ def buildShips():
     """
     ships = []
     for i in range(len(shipNames)):
-        eachShip = ship(shipNames[i], shipCodenames[i], shipLocationAndDistance[i], 
-                            shipDefenses[i], shipWeapons[i], shipCrew[i], shipFuel[i])
+        eachShip = ship(shipNames[i], shipCodenames[i], bases[i].location, bases[i].distance, shipDefenses[i], shipWeapons[i], shipCrew[i], shipFuel[i])
         ships.append(eachShip)
     return ships
 
@@ -56,6 +52,6 @@ table = PrettyTable()
 table.field_names = list(ship.__init__.__code__.co_varnames[1:])  # Set the field names to the attributes of the ship class
 
 for ship in fleet:
-        table.add_row([ship.name, ship.codename, ship.distance, ship.defenses, ship.weapons, ship.crew, ship.fuel])
+        table.add_row([ship.name, ship.codename, ship.baseLocation, ship.baseDistance, ship.defenses, ship.weapons, ship.crew, ship.fuel])
         
 # print(table)   
