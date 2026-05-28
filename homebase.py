@@ -1,17 +1,18 @@
 """Homebase module
 """
 
-class Homebase:
+class base:
     """Homebase class
     Attributes:
         name (str): The name of the homebase.
+        type (str): The type of the homebase.
     """
-    def __init__(self, name: str, location: str):
+    def __init__(self, name: str, type: str):
         self.name = name
-        self.location = location
+        self.type = type
 
     def __str__(self):
-        return f"Homebase(name={self.name}, location={self.location})"
+        return f"Homebase(name={self.name}, type={self.type})"
     
-hb = Homebase("Alpha Base", "Earth")
-print(hb)
+hb = base("Alpha Base", "Earth")
+# print(hb)

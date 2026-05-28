@@ -58,4 +58,4 @@ table.field_names = list(ship.__init__.__code__.co_varnames[1:])  # Set the fiel
 for ship in fleet:
         table.add_row([ship.name, ship.codename, ship.distance, ship.defenses, ship.weapons, ship.crew, ship.fuel])
         
-print(table)   
+# print(table)   
