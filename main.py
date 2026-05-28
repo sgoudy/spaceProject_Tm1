@@ -34,6 +34,19 @@ if q1 == "Open Sesame" or q1 == "open sesame":
     print("Access granted. Welcome to the space game!")
     print("...Building your galactic empire...") 
     slow_progress_bar()  
-    print(table)
+    print("You have a mission...would you like to accept it? (yes/no)")
+    mission = input()
+    if mission.lower() == "yes":
+        print("Great! Let's get started, commander! The clock will start ticking once you enter the Death Star. \
+You have 10 minutes to complete your mission before the Death Star blows up. Good luck!")
+    
+        print("Would you like to enter the Death Star and start your mission? (yes/no)")
+        q2 = input()
+    if q2.lower() == "yes":
+        print("Entering the Death Star... Good luck, commander!")
+    else:
+        print("Mission aborted. Maybe next time, commander.")
 else:
     print("Too bad, so sad. Incorrect passphrase. Access denied. ")
+
+

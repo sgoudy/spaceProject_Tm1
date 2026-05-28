@@ -52,6 +52,7 @@ table = PrettyTable()
 table.field_names = list(ship.__init__.__code__.co_varnames[1:])  # Set the field names to the attributes of the ship class
 
 for ship in fleet:
-        table.add_row([ship.name, ship.codename, ship.baseLocation, ship.baseDistance, ship.defenses, ship.weapons, ship.crew, ship.fuel])
+        if ship.name != "the Death Star":  # Exclude the Death Star from the table
+            table.add_row([ship.name, ship.codename, ship.baseLocation, ship.baseDistance, ship.defenses, ship.weapons, ship.crew, ship.fuel])
         
 # print(table)   
