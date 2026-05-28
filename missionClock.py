@@ -1,10 +1,8 @@
-# start a mission clock when the user enters the Death Star. 
+"""@Authors: Charles, Jordan, Shelby, Robert, Jon"""
+# Start a mission clock when the user enters the Death Star. 
 # The user has 10 minutes to complete the mission before the Death Star blows up. 
 # If the user does not complete the mission in time, they lose.
-"""@Authors: Charles, Jordan, Shelby, Robert, Jon
-Date: 26 May
-Purpose: To seize the best spaceships in all the lands
-"""
+
 import time
 t = 600
 def countdown(t):
@@ -16,5 +14,3 @@ def countdown(t):
         t -= 1
 
     print("Fire in the hole!!")
-
-countdown(int(t))

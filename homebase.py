@@ -1,5 +1,4 @@
-"""Homebase module
-"""
+"""@Authors: Charles, Jordan, Shelby, Robert, Jon"""
 shipLocation = ("Planet Viltrum", 
                            "Planet Vulcan", 
                             "Planet Vega", 
